@@ -19,19 +19,19 @@ class MyHomePage extends StatelessWidget {
         title: Text('Despesas Pessoais'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            width: double.infinity,
             child: Card(
-              child: Text(
-                'Gráfico',
-              ),
+              child: Text('Gráfico'),
               color: Colors.cyan,
               elevation: 5,
             ),
           ),
           Card(
             child: Text('Lista de Transações'),
+            color: Colors.deepOrangeAccent,
             elevation: 10,
           )
         ],
