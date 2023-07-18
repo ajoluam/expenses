@@ -45,10 +45,16 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            child: Text('Lista de Transações'),
-            color: Colors.deepOrangeAccent,
-            elevation: 10,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: _transactions.map((tr) {
+              return Card(
+                child: Text(tr.title),
+                color: Colors.amber,
+                elevation: 5,
+              );
+            }).toList(),
           )
         ],
       ),
