@@ -16,13 +16,13 @@ class MyHomePage extends StatelessWidget {
   final _transactions = [
     Transaction(
       id: 't1',
-      title: 'novo tênis de corrida',
+      title: 'Novo Tênis de Corrida',
       value: 310.76,
       date: DateTime.now(),
     ),
     Transaction(
       id: 't2',
-      title: 'conta de luz',
+      title: 'Conta de Luz',
       value: 211.30,
       date: DateTime.now(),
     )
@@ -46,13 +46,54 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: _transactions.map((tr) {
               return Card(
-                child: Text(tr.title),
-                color: Colors.amber,
-                elevation: 5,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.purple,
+                          width: 2
+                        )
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        tr.value.toStringAsFixed(2),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.purple
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          tr.title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16
+                          ),
+                        ),
+                        Text(
+                            tr.date.toString(),
+                            style: TextStyle(
+                              color: Colors.grey
+                            ),
+
+                        ),
+
+                      ],
+                      
+                    )
+                  ],
+                ),
               );
             }).toList(),
           )
