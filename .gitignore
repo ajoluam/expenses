@@ -3,9 +3,6 @@
 # Files and directories created by pub
 .dart_tool/
 .packages
-.idea
-.idea/
-android
 build/
 # If you're building an application, you may want to check-in your pubspec.lock
 pubspec.lock
@@ -30,3 +27,5 @@ doc/api/
 .flutter-plugins-dependencies
 expenses_android.iml
 Dart_SDK.xml
+/.idea/
+/android/
